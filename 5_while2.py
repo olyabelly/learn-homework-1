@@ -12,16 +12,25 @@
 
     Пользователь: Что делаешь?
     Программа: Программирую
-    
+
 """
 
-questions_and_answers = {}
+questions_and_answers = {
+    'Что делаешь?': 'С тобой разговариваю',
+    'Как дела?': 'Хорошо',
+    'А потом что будешь делать?': 'Отдыхать',
+    'Ты кто?': 'Программа',
+    'Как тебя зовут?': 'questions_and_answers'
+    }
 
-def ask_user(answers_dict):
-    """
-    Замените pass на ваш код
-    """
-    pass
-    
-if __name__ == "__main__":
-    ask_user(questions_and_answers)
+def ask_user():
+    while True:
+        user_question = input('Задай мне вопрос ')
+
+        if user_question in questions_and_answers:
+            print(questions_and_answers[user_question])
+        else:
+            input('На этот вопрос не знаю ответа ')
+
+
+ask_user()
