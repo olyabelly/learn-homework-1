@@ -25,7 +25,7 @@ def main(line1,line2):
     if line2 == "learn":
         return 3
 
-print (main("привет1", 0))
-print (main("привет", "привет"))
-print (main("здравствуй", "привет"))
-print (main("прива", "learn"))
+print (main('-', '11111'))
+print (main('!', '='))
+print (main('ПРИВЕТ', 'привет'))
+print (main('learn1', 'Learn1'))

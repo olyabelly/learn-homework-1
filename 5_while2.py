@@ -23,14 +23,12 @@ questions_and_answers = {
     'Как тебя зовут?': 'questions_and_answers'
     }
 
+
 def ask_user():
     while True:
-        user_question = input('Задай мне вопрос ')
+        user_question = input('Задай мне вопрос: ')
 
-        if user_question in questions_and_answers:
-            print(questions_and_answers[user_question])
-        else:
-            input('На этот вопрос не знаю ответа ')
-
+        answer = questions_and_answers.get(user_question, 'На этот вопрос не знаю ответа')
+        print(answer)
 
 ask_user()

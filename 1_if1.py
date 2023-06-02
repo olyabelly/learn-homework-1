@@ -18,14 +18,14 @@ user_age = input ("Сколько вам лет? ")
 
 def main(user_age):
     if user_age <= 6:
-        print('Вы в садике')
+        return('Вы в садике')
     elif user_age <= 16:
-        print('Вы в школе')
+        return('Вы в школе')
     elif user_age <= 21:
-        print('Вы в университете')
+        return('Вы в университете')
     else:
-        print('Вы работаете')
+        return('Вы работаете')
 
-main(int(user_age))
-
+result = main(int(user_age))
+print(result)
 
