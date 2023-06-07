@@ -13,8 +13,6 @@
 * Вывести содержимое переменной на экран
 
 """
-user_age = input ("Сколько вам лет? ")
-
 
 def main(user_age):
     if user_age <= 6:
@@ -26,6 +24,7 @@ def main(user_age):
     else:
         return('Вы работаете')
 
+user_age = input ("Сколько вам лет? ")
 result = main(int(user_age))
 print(result)
 

@@ -43,8 +43,13 @@ for one_product in products:
     print(f'Среднее количество продаж товара {one_product["product"]}: {items_sold_avg}')
     products_avg_sum += items_sold_avg
 
+products_len_sum = 0
+for one_product in products:
+    items_sold_1 = len(one_product['items_sold'])
+    products_len_sum += items_sold_1
 
 print(f'Сумманое количество продаж всех товаров: {products_sum}')
 
-products_avg = round(products_sum/len(products), )
+
+products_avg = round(products_sum/products_len_sum, )
 print(f'Среднее количество продаж всех товаров: {products_avg}')

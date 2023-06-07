@@ -30,14 +30,14 @@ def discounted(price, discount, max_discount=30, phone_name=''):
     except (ValueError, TypeError):
         return "Неккоректные данные"
 
-        if max_discount >= 100:
-            raise ValueError("Слишком большая максимальная скидка")
-        if discount >= max_discount:
-            return price
-        elif 'iphone' in phone_name.lower() or not phone_name:
-            return price
-        else:
-            return price - (price * discount / 100)
+    if max_discount >= 100:
+        raise ValueError("Слишком большая максимальная скидка")
+    if discount >= max_discount:
+        return price
+    elif 'iphone' in phone_name.lower() or not phone_name:
+        return price
+    else:
+        return price - (price * discount / 100)
 
 
 for phone in stock:
