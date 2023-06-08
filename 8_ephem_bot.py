@@ -29,21 +29,44 @@ def greet_user(update, context):
     print(text)
     update.message.reply_text(text)
 
+planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+
+def where_planet_was (update, context):
+    items = update.message.text.split()
+
+    planet = None
+
+    for item in items:
+        if item in planets:
+
+            if item == 'Mercury':
+                planet = ephem.Mercury
+            elif item == 'Earth':
+                planet = ephem.Earth
+            elif item == 'Mars':
+                planet = ephem.Mars
+            elif item == 'Jupiter':
+                planet = ephem.Jupiter
+            elif item == 'Saturn':
+                planet = ephem.Saturn
+            elif item == 'Uranus':
+                planet = ephem.Uranus
+            elif item == 'Neptune':
+                planet = ephem.Neptune
+
+    date = ephem.Date(items[2])
+
+    if planet is not None:
+        result = ephem.constellation(planet(date))
+        update.message.reply_text(result)
+    else:
+        update.message.reply_text('Пожалуйста, укажите название планеты на английском и дату в формате "Planet yyyy/mm/dd" после команды /planet, чтобы посмотреть в каком созвездии она находилась')
+
 
 def talk_to_me(update, context):
     user_text = update.message.text
     print(user_text)
     update.message.reply_text(text)
-
-def planet_info (update, context):
-    args = context.args
-
-    if len(args) > 0:
-        planet_name = args[0]
-        response = ephem.constellation(planet_name)
-    else:
-        response = "Пожалуйста, укажите название планеты на английском после команды /planet"
-
 
 
 def main():
